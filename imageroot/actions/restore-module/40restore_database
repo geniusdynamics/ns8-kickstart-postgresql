@@ -27,7 +27,7 @@ podman run \
     --volume=./restore:/docker-entrypoint-initdb.d/:Z \
     --volume=postgres-data:/var/lib/postgresql/data:Z \
     --replace --name=restore_db \
-    --envfile=database.env \
+    --env-file=database.env \
     --env TZ=UTC \
     "${POSTGRES_IMAGE}" < kickstart.pg_dump
 
